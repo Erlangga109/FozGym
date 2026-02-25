@@ -1,0 +1,60 @@
+SOLUTION FOR DATABASE CONNECTION ERROR
+=====================================
+
+The error "Fatal error: Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it" indicates that your PHP application cannot connect to the MySQL database server.
+
+ROOT CAUSE:
+The MySQL service in XAMPP is not running.
+
+SOLUTION STEPS:
+
+1. Launch XAMPP Control Panel
+   - Look for XAMPP Control Panel in your start menu or in the XAMPP installation directory
+   - Run it as Administrator (recommended)
+
+2. Start the required services:
+   - Make sure the Apache service is started (green "Running" indicator)
+   - Make sure the MySQL service is started (green "Running" indicator)
+   
+3. If services are not running:
+   - Click the "Start" button next to Apache
+   - Click the "Start" button next to MySQL
+
+4. Verify the services are running:
+   - Both Apache and MySQL should show "Running" status
+   - The buttons should change to "Stop" buttons
+
+5. Access your application again:
+   - Refresh your website page
+   - The error should be resolved
+
+ALTERNATIVE SOLUTIONS IF THE ABOVE DOESN'T WORK:
+
+1. Check if MySQL is using a different port:
+   - By default, MySQL runs on port 3306
+   - If you changed the port, update $DB_HOST in config.php accordingly
+   - Example: If MySQL runs on port 3307, change $DB_HOST to 'localhost:3307'
+
+2. Check Windows Services:
+   - Press Windows key + R, type 'services.msc', press Enter
+   - Look for "MySQL" or "MySQL80" service
+   - Right-click and select "Start" if it's not running
+
+3. Restart your computer:
+   - Sometimes a restart resolves port conflicts
+
+4. Check if another application is using the same port:
+   - Some other database software might conflict with MySQL
+
+5. Verify database exists:
+   - Once MySQL is running, make sure your 'fozgym' database exists
+   - Access phpMyAdmin at http://localhost/phpmyadmin to check
+
+TEST THE CONNECTION:
+- Visit http://localhost/FozGym/test_db_connection.php
+- This will help diagnose if the connection is working
+
+IMPROVEMENTS MADE TO CODE:
+- Modified db.php to provide user-friendly error messages instead of fatal errors
+- Added detailed troubleshooting information to the error page
+- Created test_db_connection.php for easy diagnosis

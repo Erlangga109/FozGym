@@ -1,0 +1,68 @@
+/* FozGym Theme */
+:root {
+  --foz-primary: #0d6efd;
+  --foz-dark: #121212;
+  --foz-accent: #00c28e;
+}
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff; /* Ensure text is visible on a dark background */
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+.hero {
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop');
+  background-size: cover; background-position: center; color: #fff;
+  border-radius: .75rem; min-height: 300px; display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.card-icon {
+  width: 70px; /* Fixed width for circular container */
+  height: 70px; /* Fixed height for circular container */
+  border-radius: 50%; /* Make the container circular */
+  background-color: #f8f9fa; /* Light background for the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto; /* Center the icon and add some bottom margin */
+  font-size: 2rem; /* Keep font size for potential emoji fallbacks */
+  overflow: hidden; /* Hide parts of image outside the circle */
+}
+.card-icon-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure image covers the area without distortion */
+}
+.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+}
+.card-link .card {
+    transition: transform 0.2s ease-in-out; /* Add smooth transition for hover effect */
+}
+.card-link .card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+}
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle; /* Align with text */
+  margin-right: 10px; /* Space between icon and text */
+  background-color: #f8f9fa; /* Light background for the circle */
+  padding: 5px; /* Add some padding inside the circle */
+}
+.table-actions a { margin-right: .25rem; }
