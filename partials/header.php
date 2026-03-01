@@ -17,6 +17,7 @@ require_once __DIR__ . '/../config.php';
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="<?= get_base_url(); ?>/about.php">Tentang</a></li>
         <?php if (is_logged_in()): ?>
           <li class="nav-item"><a class="nav-link" href="<?= get_base_url(); ?>/dashboard.php">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= get_base_url(); ?>/classes/index.php">Kelas</a></li>
